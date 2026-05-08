@@ -12,18 +12,27 @@ a(7)=55
 a(8)=88
 a(9)=61
 a(10)=47
-PRINT*,a
-IF(100<=a<=80),THEN
-PRINT*, A,DISTINCTION
-ELSE
-IF(60<=a<=79),THEN
-PRINT*, B,CREDIT
-ELSE
-IF(40<=a<=59),THEN
-PRINT*, C,PASS
-ELSE
-IF(0<=a<=39),THEN
-PRINT*, D,FAIL
+PRINT*, 
+!printing header
+PRINT *, 'STUDENT     SCORE     GRADE     REMARK' 
+!do loop for the 10 students
+DO i = 1,10
+! since all scores are between 0-100:
+IF(a(i)>=80) THEN         
+Grade = 'A'
+Remark = 'DISTINCTION'
+
+ELSE IF(a(i)>=60) THEN
+Grade = 'B'
+Remark = 'CREDIT'
+
+ELSE IF(a(i)>=40) THEN
+Grade = 'C'
+Remark = 'PASS'
+ELSE IF(a(i)>=0) THEN
+Grade = 'D'
+Remark = 'FAIL'
+END DO
 END IF
 END PROGRAM midsem
 
